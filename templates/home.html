@@ -1,32 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>DBSoria</title>
-</head>
-<body>
-    <h1>Inventory Management</h1>
-    <a href="/add">Add Item</a>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>Actions</th>
-        </tr>
-        {% for item in inventory %}
-        <tr>
-            <td>{{ item.id }}</td>
-            <td>{{ item.name }}</td>
-            <td>{{ item.quantity }}</td>
-            <td>{{ item.price }}</td>
-            <td>
-                <a href="/edit/{{ item.id }}">Edit</a>
-                <a href="/delete/{{ item.id }}">Delete</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
-</body>
-</html>
-
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div style="width: 100%;">
+    <div class="row margin-top: -5px">
+        <div class="col text-center">
+            <img src="static/dbsorialogo.png" width="400px" height="400px">
+            <h1 style="color: #c02420; font-size: 40pt;"><b>DBSORIA</b></h1>
+            <h2 style="color: #5E1914; font-size: 20pt">Keep track of your items!</h2>
+        </div>
+        <div class="col">
+            <p class="body" style="font-size: 16pt;">Welcome to <b style="color: #c02420;">DBSORIA</b>, where keeping track of your items has never been easier!</p>  
+            <p class="body" style="font-size: 16pt;">Our innovative application is designed to streamline your inventory management process, ensuring you have complete control over your store's stock.</p>
+            <p class="body" style="font-size: 16pt;"><b style="color: #c02420;">DBSORIA</b> is here to revolutionize the way you manage your items in-store, so join us on this journey and take your inventory management to the next level!</p>
+            <div class="col text-center">
+                <a href="/product" class="btn btn-danger btn-lg btn-bigger">Start Tracking Now!</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
